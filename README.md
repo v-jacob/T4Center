@@ -4,8 +4,8 @@ PySide6 desktop application for monitoring and controlling a dual-Teensy USB con
 
 ## Features
 - **Gamepad Telemetry** — Real-time visualization of controller state read from the DevMon HID interface
-- **CV Script Manager** — Browse, select, and launch Python computer vision scripts that send gamepad inputs to Teensy B via RawHID
-- **CV Preview** — Live video feed from the running CV script displayed inside the app
+- **CV Script Manager** — Browse, select, and launch CV scripts that send gamepad inputs to Teensy B via RawHID
+- **CV Preview** — Video feed from the running CV script displayed inside the app
 - **Serial Monitor** — Debug output from Teensy A (forwarded through Teensy B via UART)
 
 ## USB Hardware
