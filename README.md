@@ -14,7 +14,7 @@ Targets a **Teensy 4.1** (Teensy B) running the T4Nexus firmware:
 | Interface | Name   | Usage Page | Packet Size | Direction       |
 |-----------|--------|------------|-------------|-----------------|
 | 0         | RawHID | `0xFFAB`   | 1024 bytes  | Bidirectional   |
-| 1         | SerEmu | `0xFFC9`   | 64/32 bytes | Bidirectional   |
+| 1         | SerEmu | `0xFFC9`   | 64 OUT/32 IN bytes | Bidirectional   |
 | 2         | DevMon | `0xFFAC`   | 64 bytes    | Teensy → PC     |
 
 VID `0x16C0` / PID `0x0486` (Teensyduino RawHID), High-speed USB (480 Mbit/s).
@@ -37,15 +37,6 @@ python main.py
 ```bash
 pyinstaller --onefile --windowed main.py
 ```
-
-## Tech Stack
-
-| Library | Purpose |
-|---------|---------|
-| PySide6 | Qt6 GUI framework |
-| hidapi  | USB HID communication with Teensy B |
-| OpenCV  | CV preview frame display |
-| PyInstaller | Standalone `.exe` packaging |
 
 ## Architecture
 - **QThread + signals** for HID reading and CV preview (never blocks the main thread)
