@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QFileSystemWatcher
 from app.window import MainWindow
 
-STYLE_PATH = "style.qss"
+STYLE_PATH = "styles/style.qss"
 
 def load_style(app):
     with open(STYLE_PATH) as f:
