@@ -1,0 +1,67 @@
+QDockWidget::title {
+    background: #DDDDDD;
+    border: 1px solid #B9B9B9;
+    padding: 2px;
+    font-size: 12px;
+}
+
+/* Central header */
+QLabel#central_header {
+    border: 1px solid #B9B9B9;
+    background: #DDDDDD;
+    padding: 2px;
+    font-size: 12px;
+}
+
+/* Tab widget */
+QTabWidget::pane {
+    border: 1px solid #A0A0A0;
+    border-top: none;
+}
+
+QTabBar::tab {
+    background: palette(window);
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    border-right:  1px solid #E5E5E5;
+    min-width: 90px;
+    padding: 4px 12px;
+}
+
+QTabBar::tab:first {
+    border-left: 1px solid #E5E5E5;
+}
+
+QTabBar::tab:selected {
+    background: palette(light);
+    font-weight: bold;
+}
+
+QTabBar::tab:hover {
+    background: palette(midlight);
+}
+
+/* File explorer */
+QTreeWidget {
+    background: palette(light);
+    border: 1px solid #A0A0A0;
+    border-top: none;
+    padding: 3px;
+}
+
+QDockWidget#device_config > QWidget {
+    border: 1px solid #B9B9B9;
+    border-top: none;
+    background: palette(light);
+}
+
+/* Output panel */
+QDockWidget#output_panel::title {
+    margin-top: 2px;
+}
+
+QDockWidget#output_panel::title > QWidget {
+    border: 1px solid #A0A0A0;
+    border-top: none;
+    padding: 2px;
+}
