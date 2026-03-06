@@ -1,3 +1,7 @@
+/* =========================
+   Dock Widgets (Global)
+   ========================= */
+
 QDockWidget::title {
     background: #DDDDDD;
     border: 1px solid #B9B9B9;
@@ -5,7 +9,10 @@ QDockWidget::title {
     font-size: 12px;
 }
 
-/* Central header */
+/* =========================
+   Central (Header + Tabs)
+   ========================= */
+
 QLabel#central_header {
     border: 1px solid #B9B9B9;
     background: #DDDDDD;
@@ -13,9 +20,8 @@ QLabel#central_header {
     font-size: 12px;
 }
 
-/* Tab widget */
 QTabWidget::pane {
-    background: palette(light);
+    background: palette(window);
     border: 1px solid #A0A0A0;
     border-top: none;
 }
@@ -24,7 +30,7 @@ QTabBar::tab {
     background: palette(window);
     border: none;
     border-bottom: 1px solid #E5E5E5;
-    border-right:  1px solid #E5E5E5;
+    border-right: 1px solid #E5E5E5;
     min-width: 90px;
     padding: 4px 12px;
 }
@@ -42,7 +48,10 @@ QTabBar::tab:hover {
     background: palette(midlight);
 }
 
-/* File explorer */
+/* =========================
+   File Explorer
+   ========================= */
+
 QTreeWidget {
     background: palette(light);
     border: 1px solid #A0A0A0;
@@ -50,20 +59,84 @@ QTreeWidget {
     padding: 3px;
 }
 
+/* =========================
+   Device Config
+   ========================= */
+
 QDockWidget#device_config > QWidget {
     background: palette(light);
     border: 1px solid #B9B9B9;
     border-top: none;
 }
 
-/* Output panel */
+/* =========================
+   Output Panel
+   ========================= */
+
 QDockWidget#output_panel::title {
     margin-top: 2px;
 }
 
-QDockWidget#output_panel::title > QWidget {
-    background: palette(light);
-    border: 1px solid #A0A0A0;
+QDockWidget#output_panel > QTextEdit {
+    border: 1px solid #B9B9B9;
     border-top: none;
+}
+
+/* =========================
+   CV Python - Control Panel
+   ========================= */
+
+QWidget#cv_control {
+    background-color: palette(light);
+    border-right: 1px solid #B9B9B9;
+    padding: 4px;
+}
+
+QWidget#cv_control QLabel {
+    font-weight: bold;
+}
+
+/* -- ComboBox + PushButtons -- */
+
+QWidget#cv_control QComboBox,
+QWidget#cv_control QPushButton {
+    border: 1px solid #E5E5E5;
+    padding: 2px 4px;
+}
+
+QWidget#cv_control QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QWidget#cv_control QComboBox::down-arrow {
+    image: url(img/drop_down.png);
+    width: 16px;
+    height: 16px;
+}
+
+/* -- ToolButtons -- */
+
+QWidget#cv_control QToolButton {
+    border: 1px solid transparent;
     padding: 2px;
+}
+
+QWidget#cv_control QToolButton:hover {
+    background: #E0EEF9;
+}
+
+QWidget#cv_control QToolButton:pressed {
+    border: 1px solid #B8D4E8;
+    background: #CCE4F7;
+}
+
+/* =========================
+   CV Python - Preview
+   ========================= */
+
+QWidget#cv_preview {
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    margin: 8px;
 }
