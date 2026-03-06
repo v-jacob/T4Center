@@ -1,5 +1,6 @@
+import os
 from PySide6.QtCore import Qt, QSize
-from PySide6.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QWidget, QComboBox, QToolButton, QPushButton
+from PySide6.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QWidget, QComboBox, QToolButton, QPushButton, QFileDialog
 from PySide6.QtGui import QIcon
 
 class CVPythonView(QWidget):
@@ -28,9 +29,10 @@ class CVPythonView(QWidget):
     def _script_row(self):
         row = QHBoxLayout()
         self.script_combo = QComboBox()
-        self.script_combo.setPlaceholderText("Select a script...")
+        self.script_combo.setPlaceholderText("Select script...")
 
         folder = self._icon_button("img/folder.png")
+        folder.clicked.connect(self._browse_script)
         delete = self._icon_button("img/delete.png")
 
         row.addWidget(self.script_combo, stretch=1)
@@ -55,6 +57,16 @@ class CVPythonView(QWidget):
         btn.setIcon(QIcon(icon_path))
 
         return btn
+
+    CV_SCRIPTS_DIR = r"D:\Users\Varghese\Documents\Computer Vision"
+
+    def _browse_script(self):
+        path, _ = QFileDialog.getOpenFileName(
+            self, "Select CV Script", self.CV_SCRIPTS_DIR, "Python Files (*.py)"
+        )
+        if path and self.script_combo.findData(path) == -1:
+            self.script_combo.addItem(os.path.basename(path), path)
+            self.script_combo.setCurrentIndex(self.script_combo.count() - 1)
 
     def _cv_preview(self):
         preview = QLabel("Live preview will appear here.")

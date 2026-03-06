@@ -115,6 +115,15 @@ QWidget#cv_control QComboBox::down-arrow {
     height: 16px;
 }
 
+QWidget#cv_control QComboBox QAbstractItemView {
+    background: palette(light);
+    border: 1px solid #B9B9B9;
+    selection-background-color: #CCE4F7;
+    selection-color: black;
+    outline: none;
+    padding: 2px;
+}
+
 /* -- ToolButtons -- */
 
 QWidget#cv_control QToolButton {
